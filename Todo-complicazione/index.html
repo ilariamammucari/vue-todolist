@@ -36,10 +36,11 @@
             <div id="lista-todo">
                 <ul v-if="coseDaFare.length">
                     <li v-for="( cosa, index ) in coseDaFare">
-                        <input type="text" value="{{cosa.text}}">
+                        <input type="text" :readonly="!cosa.editing ? 'readonly' : ''" :value="cosa.text">
                         <span><i @click="cancellaDaFare(index)" class="fas fa-times"></i>
                         </span>
-                        <span @click="modificaDaFare(index)">Modifica</span>
+                        <span v-if="cosa.editing == false" @click="modificaDaFare(index)">Modifica</span>
+                        <span v-else><i class="fas fa-check"></i></span>
                     </li>
                 </ul>
                 <h3 v-else>La lista delle cose da fare è vuota!</h3>

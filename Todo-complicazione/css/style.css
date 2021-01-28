@@ -44,7 +44,8 @@ nav input {
     background-color: lightgrey;
 }
 
-nav input:focus {
+nav input:focus,
+#lista-todo input:focus {
     outline: none;
 }
 
@@ -69,6 +70,12 @@ main {
     text-align: center;
 }
 
+#lista-todo input{
+    border: none;
+    font-size: 20px;
+}
+
+
 #lista-todo ul li {
     line-height: 2;
 }
@@ -89,6 +96,7 @@ main {
 }
 
 #lista-todo ul li:hover,
+#lista-todo ul li:hover input,
 #lista-todo-cestinati ul li:hover {
     background-color: lightgray;
 }

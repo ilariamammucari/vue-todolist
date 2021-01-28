@@ -4,19 +4,18 @@ var app = new Vue({
         coseDaFare: [
             {
                 text: 'Fare la spesa',
-                editing: 'Cena fuori'
+                editing: false
             },
             {
-                text: 'Fare la spesa',
-                editing: 'Cena fuori'
+                text: 'Cena fuori',
+                editing: false
             },
             {
-                text: 'Fare la spesa',
-                editing: 'Cena fuori'
+                text: 'Studiare',
+                editing: false
             }
         ],
         coseCestinate: [],
-        modifica: '',
         valoreInput: '',
         rosso: 'rosso'
     },
@@ -26,9 +25,9 @@ var app = new Vue({
             this.coseDaFare.splice(index,1);
         },
         modificaDaFare(index){
-            this.modifica = prompt('Modifica cosa da fare');
-            this.modifica = this.modifica.charAt(0).toUpperCase() + this.modifica.substr(1).toLowerCase();
-            this.coseDaFare.splice(index,1,this.modifica);
+            this.coseDaFare[index].editing = true;
+            // this.modifica = this.modifica.charAt(0).toUpperCase() + this.modifica.substr(1).toLowerCase();
+            // this.coseDaFare.splice(index,1,this.modifica);
         },
         cancellaDefinitivamente(index){
             this.coseCestinate.splice(index,1);
