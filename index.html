@@ -50,13 +50,13 @@
             <div id="el-cestinati">
                 <h4>
                     Elementi cestino
-                    <i title="Elimina tutti" class="fas fa-trash" @click="cestinaTutti"></i></h4>
+                    <i title="Elimina tutti" class="fas fa-trash" :class="coseCestinate.length ? 'rosso' : ''" @click="cestinaTutti"></i></h4>
             </div>
             <!-- ! / cestino -->
 
             <!-- ! todo cestinati -->
             <div id="lista-todo-cestinati">
-                <ul v-if="coseCestinate.length > 0">
+                <ul v-if="coseCestinate.length">
                     <li v-for="( cosa,index ) in coseCestinate">
                         {{ cosa }}
                         <span @click="ripristina(index)">ripristina</span>

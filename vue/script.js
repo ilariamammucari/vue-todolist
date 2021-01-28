@@ -8,7 +8,8 @@ var app = new Vue({
         ],
         coseCestinate: [],
         modifica: '',
-        valoreInput: ''
+        valoreInput: '',
+        rosso: 'rosso'
     },
     methods: {
         cancellaDaFare(index){

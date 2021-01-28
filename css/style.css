@@ -18,6 +18,10 @@ ul {
     list-style: none;
 }
 
+.rosso {
+    color: red;
+}
+
 /* * header */
 header {
     text-align: center;
