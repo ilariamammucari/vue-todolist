@@ -7,7 +7,8 @@ var app = new Vue({
             'Cena fuori alle 21:00'
         ],
         coseCestinate: [],
-        modifica: ''
+        modifica: '',
+        valoreInput: ''
     },
     methods: {
         cancellaDaFare(index){
@@ -25,6 +26,15 @@ var app = new Vue({
         ripristina(index){
             this.coseDaFare.push(this.coseCestinate[index]);
             this.coseCestinate.splice(index,1);
+        },
+        inserimentoDaInput(){
+            if( this.valoreInput.length > 3 ){
+                this.coseDaFare.push(this.valoreInput.charAt(0).toUpperCase() + this.valoreInput.substr(1).toLowerCase());
+                this.valoreInput = '';
+            }
+        },
+        cestinaTutti(){
+            this.coseCestinate.splice(0);
         }
     }
 });

@@ -25,8 +25,8 @@
 
         <!-- * nav -->
         <nav>
-            <input type="text" placeholder="Inserisci testo...">
-            <button>Aggiungi</button>
+            <input type="text" v-model="valoreInput" @keydown.13="inserimentoDaInput" placeholder="Inserisci testo...">
+            <button @click="inserimentoDaInput">Aggiungi</button>
         </nav>
         <!-- * /nav -->
 
@@ -50,7 +50,7 @@
             <div id="el-cestinati">
                 <h4>
                     Elementi cestino
-                    <i class="fas fa-trash"></i></h4>
+                    <i title="Elimina tutti" class="fas fa-trash" @click="cestinaTutti"></i></h4>
             </div>
             <!-- ! / cestino -->
 

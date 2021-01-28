@@ -49,6 +49,7 @@ nav button {
     border-radius: 20px;
     border: none;
     margin-left: 5px;
+    cursor: pointer;
 }
 
 /* * main */
@@ -89,6 +90,10 @@ main {
 
 #el-cestinati {
     margin-top: 80px;
+}
+
+#el-cestinati i {
+    cursor: pointer;
 }
 
 #lista-todo-cestinati {
