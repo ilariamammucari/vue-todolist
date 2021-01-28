@@ -38,9 +38,9 @@ var app = new Vue({
             this.coseCestinate.splice(0);
         },
         tuttiNelCestino(){
-            for ( let i = 0; i < this.coseDaFare.length; i++ ){
-                this.coseCestinate.push(this.coseDaFare[i]);
-            }
+            this.coseDaFare.forEach((element) => {
+                this.coseCestinate.push(element)
+            });
             this.coseDaFare = [];
         }
     }
