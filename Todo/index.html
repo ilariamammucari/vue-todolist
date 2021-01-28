@@ -34,12 +34,12 @@
         <main>
             <!-- ! lista cose da fate -->
             <div id="lista-todo">
-                <ul v-if="coseDaFare.length > 0">
+                <ul v-if="coseDaFare.length">
                     <li v-for="( cosa, index ) in coseDaFare">
                         {{ cosa }}
                         <span><i @click="cancellaDaFare(index)" class="fas fa-times"></i>
                         </span>
-                        <span @click="modificaDaFare(index)">modifica</span>
+                        <span @click="modificaDaFare(index)">Modifica</span>
                     </li>
                 </ul>
                 <h3 v-else>La lista delle cose da fare è vuota!</h3>
@@ -59,8 +59,8 @@
                 <ul v-if="coseCestinate.length">
                     <li v-for="( cosa,index ) in coseCestinate">
                         {{ cosa }}
-                        <span @click="ripristina(index)">ripristina</span>
-                        <span @click="cancellaDefinitivamente(index)">elimina definitivamente</span>
+                        <span @click="ripristina(index)">Ripristina</span>
+                        <span @click="cancellaDefinitivamente(index)">Elimina definitivamente</span>
                     </li>
                 </ul>
                 <h3 v-else>Il cestino è vuoto!</h3>

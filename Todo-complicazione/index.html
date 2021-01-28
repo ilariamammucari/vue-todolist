@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista delle cose da fare</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    
+
+    <!-- * contenitore -->
+    <div id="root" class="container">
+        <!-- * header -->
+        <header>
+            <h1>
+                Lista delle cose da fare <i class="fas fa-user-cog"></i>
+            </h1>
+        </header>
+        <!-- * /header -->
+
+        <!-- * nav -->
+        <nav>
+            <input type="text" v-model="valoreInput" @keydown.13="inserimentoDaInput" placeholder="Inserisci testo...">
+            <button @click="inserimentoDaInput">Aggiungi</button>
+        </nav>
+        <!-- * /nav -->
+
+        <!-- * main -->
+        <main>
+            <!-- ! lista cose da fate -->
+            <div id="lista-todo">
+                <ul v-if="coseDaFare.length">
+                    <li v-for="( cosa, index ) in coseDaFare">
+                        <input type="text" value="{{cosa.text}}">
+                        <span><i @click="cancellaDaFare(index)" class="fas fa-times"></i>
+                        </span>
+                        <span @click="modificaDaFare(index)">Modifica</span>
+                    </li>
+                </ul>
+                <h3 v-else>La lista delle cose da fare è vuota!</h3>
+            </div>
+            <!-- ! /lista cose da fare -->
+
+            <!-- ! cestino -->
+            <div id="el-cestinati">
+                <h4>
+                    Elementi cestino
+                    <i title="Elimina tutti" class="fas fa-trash-alt" :class="coseCestinate.length ? 'rosso' : ''" @click="cestinaTutti"></i></h4>
+            </div>
+            <!-- ! / cestino -->
+
+            <!-- ! todo cestinati -->
+            <div id="lista-todo-cestinati">
+                <ul v-if="coseCestinate.length">
+                    <li v-for="( cosa,index ) in coseCestinate">
+                        {{ cosa }}
+                        <span @click="ripristina(index)">Ripristina</span>
+                        <span @click="cancellaDefinitivamente(index)">Elimina definitivamente</span>
+                    </li>
+                </ul>
+                <h3 v-else>Il cestino è vuoto!</h3>
+            </div>
+            <!-- ! /todo cestinati -->
+        </main>
+        <!-- * /main -->
+
+
+    </div>
+    <!-- * /contenitore -->
+
+
+    <script src="vue/script.js"></script>
+</body>
+</html>

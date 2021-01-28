@@ -85,6 +85,7 @@ main {
     vertical-align: middle;
     color: red;
     margin-right: 10px;
+    margin-left: 30px;
 }
 
 #lista-todo ul li:hover,
@@ -110,6 +111,7 @@ main {
     color: royalblue;
     cursor: pointer;
     margin-left: 30px;
+    margin-right: 10px;
 }
 
 #lista-todo-cestinati ul li span:last-child{
