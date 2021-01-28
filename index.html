@@ -34,6 +34,7 @@
         <main>
             <!-- ! lista cose da fate -->
             <div id="lista-todo">
+                <div class="rimuovi-tutti" @click="tuttiNelCestino">Rimuovi tutte le cose da fare</div>
                 <ul v-if="coseDaFare.length">
                     <li v-for="( cosa, index ) in coseDaFare">
                         {{ cosa }}
