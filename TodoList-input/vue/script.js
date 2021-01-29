@@ -4,15 +4,15 @@ var app = new Vue({
         coseDaFare: [
             {
                 text: 'Fare la spesa',
-                editing: false
+                editing: true
             },
             {
                 text: 'Cena fuori',
-                editing: false
+                editing: true
             },
             {
                 text: 'Studiare',
-                editing: false
+                editing: true
             }
         ],
         datiInput: {},
@@ -22,6 +22,9 @@ var app = new Vue({
         attivo: 'active',
         datiCestino: {}
     },
+    created(){
+        console.log(this.coseDaFare);
+    },
     methods: {
         cancellaDaFare(index){
             this.coseCestinate.push(this.coseDaFare[index].text);
@@ -29,24 +32,24 @@ var app = new Vue({
 
         },
         modificaDaFare(index){
-            this.coseDaFare[index].editing = true;
-            this.coseDaFare[index].text;
+            this.coseDaFare[index].editing = false;
         },
         cancellaDefinitivamente(index){
             this.coseCestinate.splice(index,1);
         },
         ripristina(index){
             this.datiCestino.text = this.coseCestinate[index];
-            this.datiCestino.editing = false;
+
             this.coseDaFare.push(this.datiCestino);
             this.coseCestinate.splice(index,1);
         },
-        inserimentoDaInput(index){
+        inserimentoDaInput(){
             if( this.valoreInput.length > 3 ){
 
                 this.datiInput.text = this.valoreInput.charAt(0).toUpperCase() + this.valoreInput.substr(1).toLowerCase();
-                this.datiInput.editing = false;
+                this.datiInput.editing = true;
                 this.coseDaFare.push(this.datiInput);
+                console.log(this.coseDaFare);
                 this.valoreInput = '';
 
             }
@@ -55,7 +58,7 @@ var app = new Vue({
             this.coseCestinate.splice(0);
         },
         fineModifica(index){
-            this.coseDaFare[index].editing = false;
+            this.coseDaFare[index].editing = true;
         }
     }
 });
