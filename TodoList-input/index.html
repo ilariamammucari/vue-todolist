@@ -59,7 +59,7 @@
             <div id="lista-todo-cestinati">
                 <ul v-if="coseCestinate.length">
                     <li v-for="( cosa,index ) in coseCestinate">
-                        {{ cosa }}
+                        {{ cosa.text }}
                         <span @click="ripristina(index)">Ripristina</span>
                         <span @click="cancellaDefinitivamente(index)">Elimina definitivamente</span>
                     </li>

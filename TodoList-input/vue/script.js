@@ -27,7 +27,7 @@ var app = new Vue({
     },
     methods: {
         cancellaDaFare(index){
-            this.coseCestinate.push(this.coseDaFare[index].text);
+            this.coseCestinate.push(this.coseDaFare[index]);
             this.coseDaFare.splice(index,1);
 
         },
@@ -38,7 +38,7 @@ var app = new Vue({
             this.coseCestinate.splice(index,1);
         },
         ripristina(index){
-            this.datiCestino.text = this.coseCestinate[index];
+            this.datiCestino = this.coseCestinate[index];
 
             this.coseDaFare.push(this.datiCestino);
             this.coseCestinate.splice(index,1);
@@ -48,7 +48,7 @@ var app = new Vue({
 
                 this.datiInput.text = this.valoreInput.charAt(0).toUpperCase() + this.valoreInput.substr(1).toLowerCase();
                 this.datiInput.editing = true;
-                this.coseDaFare.push(this.datiInput);
+                this.coseDaFare.push( { text: this.datiInput.text , editing: true });
                 console.log(this.coseDaFare);
                 this.valoreInput = '';
 
