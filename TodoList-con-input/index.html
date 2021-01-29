@@ -34,12 +34,14 @@
         <main>
             <!-- ! lista cose da fate -->
             <div id="lista-todo">
+                <div class="modifica">
+                    <small>*entra in modalità editing con un doppio click!</small>
+                </div>
                 <ul v-if="coseDaFare.length">
                     <li v-for="( cosa, index ) in coseDaFare">
                         <input type="text" :readonly="cosa.editing" v-model="cosa.text" @dblclick="modificaDaFare(index)" :class="cosa.editing ? 'attivo' : '' ">
                         <span><i @click="cancellaDaFare(index)" class="fas fa-times"></i>
                         </span>
-                        <!-- <span v-if="cosa.editing == false" @click="modificaDaFare(index)">Modifica</span> -->
                         <span v-if="!cosa.editing"><i @click="fineModifica(index)" class="fas fa-check"></i></span>
                     </li>
                 </ul>

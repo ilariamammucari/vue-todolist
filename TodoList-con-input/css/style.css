@@ -65,6 +65,13 @@ main {
     font-size: 25px;
 }
 
+#lista-todo .modifica {
+    text-align: right;
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: royalblue;
+}
+
 #lista-todo h3,
 #lista-todo-cestinati h3 {
     text-align: center;
@@ -106,14 +113,6 @@ main {
 #lista-todo ul li span .fa-check:hover {
     color: green;
 }
-
-/* #lista-todo span:first-child i{
-    color: grey;
-}
-
-#lista-todo span:first-child i:hover{
-    color: green;
-} */
 
 
 

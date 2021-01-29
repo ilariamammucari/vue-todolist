@@ -48,7 +48,7 @@ var app = new Vue({
 
                 this.datiInput.text = this.valoreInput.charAt(0).toUpperCase() + this.valoreInput.substr(1).toLowerCase();
                 this.datiInput.editing = true;
-                this.coseDaFare.push( { text: this.datiInput.text , editing: true });
+                this.coseDaFare.push( { text: this.datiInput.text , editing: true } );
                 console.log(this.coseDaFare);
                 this.valoreInput = '';
 
