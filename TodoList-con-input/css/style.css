@@ -72,6 +72,13 @@ main {
     color: royalblue;
 }
 
+#lista-todo .cestina-tutti {
+    text-align: right;
+    font-size: 18px;
+    color: red;
+    cursor: pointer;
+}
+
 #lista-todo h3,
 #lista-todo-cestinati h3 {
     text-align: center;

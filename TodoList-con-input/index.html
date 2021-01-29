@@ -34,8 +34,11 @@
         <main>
             <!-- ! lista cose da fate -->
             <div id="lista-todo">
-                <div class="modifica">
+                <div v-if="coseDaFare.length"  class="modifica">
                     <small>*entra in modalità editing con un doppio click!</small>
+                </div>
+                <div v-if="coseDaFare.length > 1" class="cestina-tutti">
+                    <small @click="tuttiNelCestino">Elimina tutti</small>
                 </div>
                 <ul v-if="coseDaFare.length">
                     <li v-for="( cosa, index ) in coseDaFare">

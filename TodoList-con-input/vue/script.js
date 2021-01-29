@@ -47,7 +47,6 @@ var app = new Vue({
             if( this.valoreInput.length > 3 ){
 
                 this.datiInput.text = this.valoreInput.charAt(0).toUpperCase() + this.valoreInput.substr(1).toLowerCase();
-                this.datiInput.editing = true;
                 this.coseDaFare.push( { text: this.datiInput.text , editing: true } );
                 console.log(this.coseDaFare);
                 this.valoreInput = '';
@@ -59,6 +58,12 @@ var app = new Vue({
         },
         fineModifica(index){
             this.coseDaFare[index].editing = true;
+        },
+        tuttiNelCestino(){
+            this.coseDaFare.forEach((element) => {
+                this.coseCestinate.push(element)
+            });
+            this.coseDaFare = [];
         }
     }
 });
