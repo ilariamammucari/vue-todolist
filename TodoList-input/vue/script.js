@@ -19,23 +19,26 @@ var app = new Vue({
         coseCestinate: [],
         valoreInput: '',
         rosso: 'rosso',
-        input: '',
-        attivo: 'active'
+        attivo: 'active',
+        datiCestino: {}
     },
     methods: {
         cancellaDaFare(index){
             this.coseCestinate.push(this.coseDaFare[index].text);
             this.coseDaFare.splice(index,1);
+
         },
         modificaDaFare(index){
             this.coseDaFare[index].editing = true;
-            this.input = this.coseDaFare[index];
+            this.coseDaFare[index].text;
         },
         cancellaDefinitivamente(index){
             this.coseCestinate.splice(index,1);
         },
         ripristina(index){
-            this.coseDaFare.push(this.coseCestinate[index]);
+            this.datiCestino.text = this.coseCestinate[index];
+            this.datiCestino.editing = false;
+            this.coseDaFare.push(this.datiCestino);
             this.coseCestinate.splice(index,1);
         },
         inserimentoDaInput(index){
@@ -44,7 +47,6 @@ var app = new Vue({
                 this.datiInput.text = this.valoreInput.charAt(0).toUpperCase() + this.valoreInput.substr(1).toLowerCase();
                 this.datiInput.editing = false;
                 this.coseDaFare.push(this.datiInput);
-                console.log(this.coseDaFare);
                 this.valoreInput = '';
 
             }
