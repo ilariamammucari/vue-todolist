@@ -75,6 +75,10 @@ main {
     font-size: 20px;
 }
 
+#lista-todo input.active {
+    background-color: #fff;
+}
+
 
 #lista-todo ul li {
     line-height: 2;
@@ -95,13 +99,21 @@ main {
     margin-left: 30px;
 }
 
-#lista-todo span:last-child i{
+#lista-todo ul li span .fa-check {
     color: grey;
 }
 
-#lista-todo span:last-child i:hover{
+#lista-todo ul li span .fa-check:hover {
     color: green;
 }
+
+/* #lista-todo span:first-child i{
+    color: grey;
+}
+
+#lista-todo span:first-child i:hover{
+    color: green;
+} */
 
 
 
@@ -110,6 +122,7 @@ main {
 #lista-todo-cestinati ul li:hover {
     background-color: lightgray;
 }
+
 
 #el-cestinati {
     margin-top: 80px;

@@ -15,10 +15,12 @@ var app = new Vue({
                 editing: false
             }
         ],
+        datiInput: {},
         coseCestinate: [],
         valoreInput: '',
         rosso: 'rosso',
-        input: ''
+        input: '',
+        attivo: 'active'
     },
     methods: {
         cancellaDaFare(index){
@@ -27,7 +29,7 @@ var app = new Vue({
         },
         modificaDaFare(index){
             this.coseDaFare[index].editing = true;
-            this.input = this.coseDaFare[index].text;
+            this.input = this.coseDaFare[index];
         },
         cancellaDefinitivamente(index){
             this.coseCestinate.splice(index,1);
@@ -36,10 +38,15 @@ var app = new Vue({
             this.coseDaFare.push(this.coseCestinate[index]);
             this.coseCestinate.splice(index,1);
         },
-        inserimentoDaInput(){
+        inserimentoDaInput(index){
             if( this.valoreInput.length > 3 ){
-                this.coseDaFare.text.push(this.valoreInput.charAt(0).toUpperCase() + this.valoreInput.substr(1).toLowerCase());
+
+                this.datiInput.text = this.valoreInput.charAt(0).toUpperCase() + this.valoreInput.substr(1).toLowerCase();
+                this.datiInput.editing = false;
+                this.coseDaFare.push(this.datiInput);
+                console.log(this.coseDaFare);
                 this.valoreInput = '';
+
             }
         },
         cestinaTutti(){
